@@ -30,15 +30,16 @@ services:
         environment:
             PMA_HOST: db
         networks:
-            - dev
-www:
-    build: docker
-    container_name: www_docker_symfony
-    ports:
-      - "8000:80"
-    volumes:
-      - ./docker/vhosts:/etc/apache2/sites-enabled
-      - ./:/var/www
-    networks:
-      - dev
+            - dev   
 
+www:
+        build: php
+        container_name: www_docker_symfony
+        ports:
+          - "8741:80"
+        volumes:
+            - ./php/vhosts:/etc/apache2/sites-enabled
+            - ./:/var/www
+        restart: always
+        networks:
+            - dev
