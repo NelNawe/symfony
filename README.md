@@ -29,4 +29,4 @@ Faire le projet avec un environnement de de dev et un environnement de productio
 **Utilisation**
 
  * Lancer le projet 
-   docker exec www_docker_symfony composer create-project symfony/website-skeleton project
+   docker exec www_docker_symfony composer create symfony/website-skeleton project
